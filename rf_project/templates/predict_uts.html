@@ -1,0 +1,96 @@
+{% extends "layouts.html" %} {% block content %}
+<div
+  class="col-10 offset-2 col-lg-8 offset-lg-2 justify-content-center align-items-center"
+>
+  <form method="POST" action="" style="text-align: center;">
+    {{ form.hidden_tag() }}
+    <fieldset
+      class="col-10 offset-2 col-lg-8 offset-lg-2 justify-content-center align-items-center"
+    >
+      <legend
+        class="border-bottom-mb-4"
+        style="color: beige; padding-bottom: 20px; padding-top: 20px;"
+      >
+        PREDICT ULTIMATE TENSILE STRENGTH
+      </legend>
+      <div class="form-group" style="color: burlywood;">
+        {{ form.f_PcntCa.label(class="form-control-label") }} {% if
+        form.f_PcntCa.errors %} {{ form.f_PcntCa(class="form-control
+        form-control-lg is-invalid" ) }}
+        <div class="invalid-feedback">
+          {% for errors in form.f_PcntCa.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %} {{ form.f_PcntCa(class="form-control form-control-lg") }} {%
+        endif%}
+      </div>
+      <div class="form-group" style="color: burlywood;">
+        {{ form.f_PcntC.label(class="form-control-label") }} {% if
+        form.f_PcntC.errors %} {{ form.f_PcntC(class="form-control
+        form-control-lg is-invalid" ) }}
+        <div class="invalid-feedback">
+          {% for errors in form.f_PcntC.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %} {{ form.f_PcntC(class="form-control form-control-lg") }} {%
+        endif%}
+      </div>
+      <div class="form-group" style="color: burlywood;">
+        {{ form.f_PcntNb.label(class="form-control-label") }} {% if
+        form.f_PcntNb.errors %} {{ form.f_PcntNb(class="form-control
+        form-control-lg is-invalid" ) }}
+        <div class="invalid-feedback">
+          {% for errors in form.f_PcntNb.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %} {{ form.f_PcntNb(class="form-control form-control-lg") }} {%
+        endif%}
+      </div>
+      <div class="form-group" style="color: burlywood;">
+        {{ form.f_PcntMn.label(class="form-control-label") }} {% if
+        form.f_PcntMn.errors %} {{ form.f_PcntMn(class="form-control
+        form-control-lg is-invalid" ) }}
+        <div class="invalid-feedback">
+          {% for errors in form.f_PcntMn.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %} {{ form.f_PcntMn(class="form-control form-control-lg") }} {%
+        endif%}
+      </div>
+      <div class="form-group" style="color: burlywood;">
+        {{ form.f_PcntN.label(class="form-control-label") }} {% if
+        form.f_PcntN.errors %} {{ form.f_PcntN(class="form-control
+        form-control-lg is-invalid" ) }}
+        <div class="invalid-feedback">
+          {% for errors in form.f_PcntN.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %} {{ form.f_PcntN(class="form-control form-control-lg") }} {%
+        endif%}
+      </div>
+    </fieldset>
+    <div
+      class="col-8 offset-1 col-lg-8 offset-lg-2 justify-content-center align-items-center"
+      style="color: burlywood; padding-top: 30px;"
+    >
+      {{ form.submit(class="btn btn-warning") }}
+    </div>
+  </form>
+</div>
+<div
+  class="col-12 offset-1 col-lg-10 offset-lg-3 justify-content-center align-items-center"
+  style="
+    color: aliceblue;
+    font-size: x-large;
+    font-weight: 500;
+    padding-top: 15px;
+  "
+>
+  {{prediction_text}}
+</div>
+{% endblock content %}
